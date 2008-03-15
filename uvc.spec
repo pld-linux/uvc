@@ -5,8 +5,8 @@
 #
 %define		_rel	1
 #
-Summary:	uvc
-Summary(pl.UTF-8):	uvc
+Summary:	USB Video Class driver
+Summary(pl.UTF-8):	Sterownik USB Video Class
 Name:		uvc
 Version:	0.0
 Release:	%{_rel}
@@ -21,6 +21,10 @@ BuildRequires:	rpmbuild(macros) >= 1.379
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+USB Video Class (uvc) driver.
+
+%description -l pl.UTF-8
+Sterownik USB Video Class.
 
 %package -n kernel%{_alt_kernel}-misc-uvc
 Summary:	uvc kernel module
@@ -34,6 +38,10 @@ Requires(postun):	%releq_kernel
 %endif
 
 %description -n kernel%{_alt_kernel}-misc-uvc
+USB Video Class (uvc) linux kernel modul.
+
+%description -n kernel%{_alt_kernel}-misc-uvc -l pl.UTF-8
+Moduł jądra linuksa dla USB Video Class.
 
 %prep
 %setup -q -n uvc
