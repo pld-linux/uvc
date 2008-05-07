@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_with	verbose		# verbose build (V=1)
 #
-%define		rel	202
+%define		rel	207
 #
 Summary:	USB Video Class driver
 Summary(pl.UTF-8):	Sterownik USB Video Class
@@ -14,7 +14,7 @@ License:	GPL v2
 Group:		Base/Kernel
 #Source0:	http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice/%{name}-%{version}.tar.gz
 Source0:	%{name}-r%{rel}.tar.gz
-# Source0-md5:	0b5265f5b678a539ae1b91f203033617
+# Source0-md5:	92c7fad9586605e627cbce7786d489da
 Patch0:		%{name}-driver.patch
 URL:		http://linux-uvc.berlios.de/
 %{?with_dist_kernel:BuildRequires:	kernel%{_alt_kernel}-module-build >= 3:2.6.20.2}
