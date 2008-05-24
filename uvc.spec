@@ -4,18 +4,19 @@
 %bcond_with	verbose		# verbose build (V=1)
 #
 %define		rel	207
+%define		pname	uvc
 #
 Summary:	USB Video Class driver
 Summary(pl.UTF-8):	Sterownik USB Video Class
-Name:		uvc
+Name:		%{pname}%{_alt_kernel}
 Version:	0.%{rel}.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Base/Kernel
-#Source0:	http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice/%{name}-%{version}.tar.gz
-Source0:	%{name}-r%{rel}.tar.gz
+#Source0:	http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice/%{pname}-%{version}.tar.gz
+Source0:	%{pname}-r%{rel}.tar.gz
 # Source0-md5:	92c7fad9586605e627cbce7786d489da
-Patch0:		%{name}-driver.patch
+Patch0:		%{pname}-driver.patch
 URL:		http://linux-uvc.berlios.de/
 %{?with_dist_kernel:BuildRequires:	kernel%{_alt_kernel}-module-build >= 3:2.6.20.2}
 BuildRequires:	rpmbuild(macros) >= 1.379
@@ -45,15 +46,15 @@ USB Video Class (uvc) linux kernel modul.
 Moduł jądra linuksa dla USB Video Class.
 
 %prep
-%setup -q -n %{name}-r%{rel}
+%setup -q -n %{pname}-r%{rel}
 %patch0 -p0
 
 %build
-%build_kernel_modules -m %{name}video
+%build_kernel_modules -m %{pname}video
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%install_kernel_modules -m %{name}video -d kernel/drivers/misc
+%install_kernel_modules -m %{pname}video -d kernel/drivers/misc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,4 +67,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kernel%{_alt_kernel}-misc-uvc
 %defattr(644,root,root,755)
-/lib/modules/%{_kernel_ver}/kernel/drivers/misc/%{name}video.ko*
+/lib/modules/%{_kernel_ver}/kernel/drivers/misc/%{pname}video.ko*
