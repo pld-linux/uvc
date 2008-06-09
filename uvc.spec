@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_with	verbose		# verbose build (V=1)
 #
-%define		rel	207
+%define		rel	208
 %define		pname	uvc
 #
 Summary:	USB Video Class driver
