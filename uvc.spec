@@ -31,7 +31,7 @@ Sterownik USB Video Class.
 %package -n kernel%{_alt_kernel}-misc-uvc
 Summary:	uvc kernel module
 Summary(pl.UTF-8):	uvc
-Release:	%{rel}@%{_kernel_ver_str}
+Release:	%{subver}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
 %if %{with dist_kernel}
@@ -46,7 +46,7 @@ USB Video Class (uvc) linux kernel modul.
 Moduł jądra linuksa dla USB Video Class.
 
 %prep
-%setup -q -n %{pname}-r%{rel}
+%setup -q -n %{pname}-r%{subver}
 %patch0 -p0
 
 %build
