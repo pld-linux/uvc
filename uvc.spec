@@ -10,7 +10,7 @@ Summary:	USB Video Class driver
 Summary(pl.UTF-8):	Sterownik USB Video Class
 Name:		%{pname}%{_alt_kernel}
 Version:	0.%{subver}.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Base/Kernel
 #Source0:	http://www.lavrsen.dk/twiki/pub/Motion/VideoFourLinuxLoopbackDevice/%{pname}-%{version}.tar.gz
