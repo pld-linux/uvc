@@ -9,7 +9,7 @@
 Summary:	USB Video Class driver
 Summary(pl.UTF-8):	Sterownik USB Video Class
 Name:		%{pname}%{_alt_kernel}
-Version:	0.%{subver}.0
+Version:	0.%{subver}.1
 Release:	2
 License:	GPL v2
 Group:		Base/Kernel
